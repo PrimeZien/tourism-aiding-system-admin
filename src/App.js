@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css';
 import NavigationPanel from "./Components/NavigationPanel/NavigationPanel";
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Configurations from "./Pages/Configurations/Configurations";
 import Users from "./Pages/Users/Users";
@@ -27,7 +27,7 @@ import EditDriverFare from "./Pages/Configurations/DriverFare/EditDriverFare";
 import SingleUser from "./Pages/Users/SingleUser";
 import SingleAccommodationReservation from "./Pages/Users/UserAccommodationReservations/SingleAccommodationReservation";
 import SingleVehicleReservation from "./Pages/Users/UserVehicleReservations/SingleVehicleReservation";
-import Login from "./Pages/Login/Login";
+import Login from "../src/Pages/Login/Login";
 
 function setToken(userToken) {
     sessionStorage.setItem('token', JSON.stringify(userToken));
@@ -44,39 +44,39 @@ function App() {
     const token = getToken();
 
     if (!token) {
-        return <Login setToken={setToken}/>
+        return <Login setToken={setToken} />
     }
 
     return (
         <>
             <Router>
-                <NavigationPanel/>
-                <ScrollToTop/>
+                <NavigationPanel />
+                <ScrollToTop />
                 <Routes>
-                    <Route path='/' exact element={<Home/>}/>
-                    <Route path='/users' element={<Users/>}/>
-                    <Route path='/user/:id' element={<SingleUser/>}/>
-                    <Route path='/user/accommodation-reservation' element={<SingleAccommodationReservation/>}/>
-                    <Route path='/user/vehicle-reservation' element={<SingleVehicleReservation/>}/>
-                    <Route path='/vendors' element={<Vendors/>}/>
-                    <Route path='/vendor' element={<SingleVendor/>}/>
-                    <Route path='/accommodation' element={<SingleAccommodation/>}/>
-                    <Route path='/locations' element={<Locations/>}/>
-                    <Route path='/location/new' element={<NewLocation/>}/>
-                    <Route path='/location/view/:id' element={<ViewSingleLocation/>}/>
-                    <Route path='/location/edit/:id' element={<EditSingleLocation/>}/>
-                    <Route path='/location/attraction/new/:locationId' element={<NewLocationAttraction/>}/>
-                    <Route path='/location/attraction/view/:id' element={<ViewLocationAttraction/>}/>
-                    <Route path='/location/attraction/edit/:id' element={<EditLocationAttraction/>}/>
-                    <Route path='/configurations' element={<Configurations/>}/>
-                    <Route path='/configurations/vehicle-types' element={<VehicleTypes/>}/>
-                    <Route path='/configurations/accommodation-types' element={<AccommodationTypes/>}/>
-                    <Route path='/configurations/room-facilities' element={<RoomFacilities/>}/>
-                    <Route path='/configurations/bathroom-facilities' element={<BathroomFacilities/>}/>
-                    <Route path='/configurations/provinces' element={<Provinces/>}/>
-                    <Route path='/configurations/location-activities' element={<LocationActivities/>}/>
-                    <Route path='/configurations/driver-fare' element={<DriverFare/>}/>
-                    <Route path='/configurations/driver-fare/edit' element={<EditDriverFare/>}/>
+                    <Route path='/' exact element={<Home />} />
+                    <Route path='/users' element={<Users />} />
+                    <Route path='/user/:id' element={<SingleUser />} />
+                    <Route path='/user/accommodation-reservation' element={<SingleAccommodationReservation />} />
+                    <Route path='/user/vehicle-reservation' element={<SingleVehicleReservation />} />
+                    <Route path='/vendors' element={<Vendors />} />
+                    <Route path='/vendor' element={<SingleVendor />} />
+                    <Route path='/accommodation' element={<SingleAccommodation />} />
+                    <Route path='/locations' element={<Locations />} />
+                    <Route path='/location/new' element={<NewLocation />} />
+                    <Route path='/location/view/:id' element={<ViewSingleLocation />} />
+                    <Route path='/location/edit/:id' element={<EditSingleLocation />} />
+                    <Route path='/location/attraction/new/:locationId' element={<NewLocationAttraction />} />
+                    <Route path='/location/attraction/view/:id' element={<ViewLocationAttraction />} />
+                    <Route path='/location/attraction/edit/:id' element={<EditLocationAttraction />} />
+                    <Route path='/configurations' element={<Configurations />} />
+                    <Route path='/configurations/vehicle-types' element={<VehicleTypes />} />
+                    <Route path='/configurations/accommodation-types' element={<AccommodationTypes />} />
+                    <Route path='/configurations/room-facilities' element={<RoomFacilities />} />
+                    <Route path='/configurations/bathroom-facilities' element={<BathroomFacilities />} />
+                    <Route path='/configurations/provinces' element={<Provinces />} />
+                    <Route path='/configurations/location-activities' element={<LocationActivities />} />
+                    <Route path='/configurations/driver-fare' element={<DriverFare />} />
+                    <Route path='/configurations/driver-fare/edit' element={<EditDriverFare />} />
                 </Routes>
             </Router>
         </>
